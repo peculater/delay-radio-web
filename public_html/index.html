@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+https://github.com/cwilso/Audio-Input-Effects/blob/master/index.html
+<ascript src="http://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></ascript>
+
+-->
+<html>
+    <head>
+        <title>Live audio input delay</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/effect.js"></script>
+        <script src="js/waveshaper.js"></script>
+        <script src="js/jungle.js"></script>
+        <script src="js/effects.js"></script>
+        <script src="js/delay.js"></script>
+        
+
+        <!-- Visualizer stuff -->
+        <script src="js/visualizer/events.js"></script>
+
+        <!-- WebGL stuff -->
+        <script src="js/visualizer/base.js"></script>
+        <script src="js/visualizer/cameracontroller.js"></script>
+
+        <!-- TODO(kbr): remove this dependency -->
+        <script src="js/visualizer/matrix4x4.js"></script>
+
+        <!-- Visualizer GL library -->
+        <script src="js/visualizer/visualizer.js"></script>
+        <script src="js/visualizer/shader.js"></script>
+        <style>
+            body { font: 14pt Arial, sans-serif; background: #333; color: gray; }
+            select { font: 14pt Arial, sans-serif; }
+            div#controls div { border: 1px solid darkgray; border-radius: 5px; padding: 10px; width: 728px;}
+            div#controls div.display { display: block; }
+            #controls { padding-top: 24px;padding-bottom: 24px;}
+            #effectMix { padding-top: 12px;}
+            #arranger { width:750px; margin: 25px auto}
+        </style>
+    </head>
+    <body>
+        <div>Input:
+            <select id="audioinput" onchange="changeInput(this.selectedIndex);">
+                <option>default (selection not supported)</option>
+            </select>
+        </div>
+        <div id="arranger">
+            <canvas id="view1" width="800" height="200"></canvas><div id="controls">
+                <div id="delayControls" class="display">A basic digital delay.<br>
+                    Delay time: <input id="dtime" type="range" min="0.02" max="20" step="0.02" value="1.5" style="height: 20px; width: 200px" onInput="slid(event.target.value);"><br><span id="slidTime"></span> seconds
+                </div>
+            </div>
+            <canvas id="view2" width="800" height="200"></canvas>
+            
+
+        </div>
+
+
+    </body>
+</html>
