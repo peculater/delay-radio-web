@@ -181,14 +181,6 @@ function gotSources(sourceInfos) {
 }
 
 function initAudio() {
-    var irRRequest = new XMLHttpRequest();
-    irRRequest.open("GET", "sounds/cardiod-rear-levelled.wav", true);
-    irRRequest.responseType = "arraybuffer";
-    irRRequest.onload = function() {
-        audioContext.decodeAudioData( irRRequest.response, 
-            function(buffer) { reverbBuffer = buffer; } );
-    }
-    irRRequest.send();
 
     o3djs.require('o3djs.shader');
 
